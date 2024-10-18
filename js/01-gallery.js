@@ -23,4 +23,15 @@ function createImgMarkup() {
 const markup = createImgMarkup();
 gallery.innerHTML = markup;
 
-gallery.addEventListener("click", () => {});
+gallery.addEventListener("click", imageClick);
+
+function imageClick(event) {
+  event.preventDefault();
+
+  const largeImage = event.target.dataset.source;
+  const instance = basicLightbox.create(`
+    <img src="${largeImage}" width="800" height="600">
+  `);
+
+  instance.show();
+}
