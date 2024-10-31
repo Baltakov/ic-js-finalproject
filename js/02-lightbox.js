@@ -19,8 +19,7 @@ function createImgMarkup() {
 const markup = createImgMarkup();
 gallery.innerHTML = markup;
 
-gallery.addEventListener("click", imageClick);
-
-function imageClick(event) {
-  event.preventDefault();
-}
+new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
